@@ -1,5 +1,5 @@
 <div class="container">
-  <%@snacks.each do |snack|  %>
+  <%@snacks.reverse.each do |snack|  %>
 
 
   <a href="/snack/<%=snack.id%>"><p><%= snack.content %></p></a>

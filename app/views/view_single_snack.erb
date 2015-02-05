@@ -1,9 +1,18 @@
 <div class="container">
 <% @snack  %>
+<h3> SNACK: </h3>
 <p><%= @snack.content %></p>
-
-<p><%= @snack.user_id %></p>
+<p> Tweet Id:</p>
+<p><%= @snack.id %></p>
 
 
 
 </div>
+
+
+<form action="/snack/<%=@snack.id %>" method="post">
+  <input type="hidden" name="data[content]" value="<%= @snack.content %>">
+  <br>
+  <br>
+  <input type="submit" value="edit post">
+</form>
