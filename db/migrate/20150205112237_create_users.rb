@@ -7,5 +7,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string  :profile_picture
 
       t.timestamps
+    end
   end
 end
