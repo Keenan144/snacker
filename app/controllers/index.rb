@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 get '/profile' do
   if session[:current_user_id] == nil
     "you're not logged in"
@@ -55,7 +55,7 @@ get '/logout' do
 
 end
 
-=======
+
 get '/' do
   # goes to view /index.erb
   @snacks = Tweet.all
@@ -100,4 +100,3 @@ get '/homepage' do
 end
 
 
->>>>>>> 3805346a344343cab484c91afcb0f0c3dec6097f
