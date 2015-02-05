@@ -17,7 +17,9 @@ end
 
 get '/snack/:id' do |id|
   #display a specific snack
+  @snack = Tweet.find(id)
 
+  erb :view_single_snack
 end
 
 get '/snack/:id/edit' do

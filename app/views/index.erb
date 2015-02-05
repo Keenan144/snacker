@@ -1,6 +1,8 @@
 <div class="container">
   <%@snacks.each do |snack|  %>
-  <p><%= snack.content %></p>
+
+
+  <a href="/snack/<%=snack.id%>"><p><%= snack.content %></p></a>
   <% end %>
 
 
