@@ -3,6 +3,7 @@ get '/profile' do
     "you're not logged in"
   else
     erb :profile
+  end
 end
 #login page
 get '/login' do
@@ -34,10 +35,13 @@ get '/register' do
 end
 
 post '/register' do
+  @new_user = User.create(name: params[:name], handle: params[:handle], password: params[:password])
+  session_set_current_user(@new_user)
+  redirect('/profile')
+end
 #create a new user with params from registration form
 #
 #redirect to home page or new profile page
-end
 
 
 #logout route
