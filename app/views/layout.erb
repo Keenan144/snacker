@@ -5,15 +5,17 @@
 </head>
 <body>
   <div class="homebutton">
-    <a href="/homepage">Return Home</a>
+    <a href="/homepage">Home</a>
   </div>
+  <h1>Snacker</h1>
 
-  <div class="login">
-    <% if session_current_user %>
-    <a href="/logout">Logout</a><br><br>
-    <a href="/profile"> View Profile </a>
-      <% else %>
-      <a href="/login">Login</a>
+    <div class="login">
+      <% if session_current_user == nil %>
+        <a href="/register">Sign Up</a>
+        <a href="/login">Login</a>
+        <% else %>
+        <a href="/profile"> View Profile </a>
+        <a href="/logout">Logout</a><br><br>
       <% end %>
     </div>
 
