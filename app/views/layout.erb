@@ -1,6 +1,18 @@
-<!DOCTYPE html>
-<head>
-<!-- <link rel="stylesheet" "href=""> -->
+<html>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/application.css">
+  </head>
+    <body>
+        <div id="header">
+            <ul>
+              <a href="index.html">Home</a>
+              <a href="#">Logout</a>
+            </ul>
+        </div><!DOCTYPE html>
+
+<link rel="stylesheet" "href="">
 </head>
 
 <div class="homebutton">
@@ -17,7 +29,6 @@
     <p> <%= User.find(session[:current_user_id]).name %> </p></a>
   <% end %>
 </div>
-<body>
 
 <%= yield %>
 </body>

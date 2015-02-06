@@ -1,1 +1,10 @@
-application.css
+body {
+}
+
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.header {
+  float: right
+}
