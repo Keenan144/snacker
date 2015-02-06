@@ -1,5 +1,9 @@
 <div class="">
 
+<% if @new_user != nil %>
+  <p>Invalid Handle!</p>
+<% end %>
+
   <form action='/register' method="post">
     Choose your Handle: <input type="text" name="handle" placeholder="Handle">
     <br><br>
@@ -8,7 +12,6 @@
     What's your Name: <input type="text" name="name" placeholder="Full name">
     <br><br>
     <input type="submit" value="Register!">
-
   </form>
 
 </div>

@@ -37,8 +37,12 @@ end
 
 post '/register' do
   @new_user = User.create(name: params[:name], handle: params[:handle], password: params[:password])
-  session_set_current_user(@new_user)
-  redirect('/profile')
+  if @new_user.valid?
+      session_set_current_user(@new_user)
+      redirect('/profile')
+  else
+    erb :register
+  end
 end
 #create a new user with params from registration form
 #
@@ -70,7 +74,11 @@ end
 post '/snack' do
   #create a new snack
   @snack = Tweet.create(params[:data])
-  redirect '/'
+  if @snack.valid?
+    redirect '/'
+  else
+    erb :new_snack
+  end
 end
 
 get '/snack/:id' do |id|
