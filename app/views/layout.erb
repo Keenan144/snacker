@@ -8,6 +8,15 @@
 
 
 </div>
+
+<div class="login" float="right">
+  <% if session[:current_user_id] == nil %>
+  <a href="/login">Login</a>
+  <% else %>
+  <a href="/profile">
+    <p> <%= User.find(session[:current_user_id]).name %> </p></a>
+  <% end %>
+</div>
 <body>
 
 <%= yield %>
