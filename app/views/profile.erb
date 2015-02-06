@@ -2,9 +2,9 @@
 
 <div class="container" align="center">
   <%id = session[:current_user_id] %>
+  <h4> Here are your snacks: </h4>
   <%array = Tweet.where(user_id: id) %>
   <%array.each do |snack|%>
-  <h4> Here are your snacks: </h4>
   <a href="/snack/<%=snack.id%>"><p><%= snack.content %></p></a>
   <% end %>
 </div>
