@@ -20,7 +20,7 @@
   <% @counter += 1 %>
   <% if @counter < 10 %>
   <p><strong> <%= User.find(snack.user_id).handle %> </strong>
-  <a href="/snack/<%=Tweet.find(snack).id%>"><%= snack.content %></a><%= snack.id %></p>
+  <a href="/snack/<%=Tweet.find(snack).id%>"><%= snack.content %></a></p>
   <% end %>
   <% end %>
 </div>
