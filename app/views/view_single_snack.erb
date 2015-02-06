@@ -3,7 +3,7 @@
   <h3> SNACK: </h3>
   <p><%= @snack.content %></p>
   <p> Tweet Id:</p>
-  <p><%= @snack.id %></p>
+  <p><%= User.find(@snack.user_id).handle %></p>
 
   <a href="/snack/<%=@snack.id%>/edit">Edit Post</a>
 
