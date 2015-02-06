@@ -58,7 +58,7 @@ end
 
 get '/' do
   # goes to view /index.erb
-  @snacks = Tweet.all
+  @snacks = Tweet.all #tweet.find_by(user_name/index)
   erb :index
 end
 
@@ -80,18 +80,25 @@ get '/snack/:id' do |id|
   erb :view_single_snack
 end
 
-get '/snack/:id/edit' do
+get '/snack/:id/edit' do |id|
   #return html form for editing snack
+  @snack = Tweet.find(id)
+  erb :edit
 end
 
 put '/snack/:id' do
   #updates a specific snack
+  @snack = Tweet.find(params[:id])
+  @snack.update(params[:data])
   redirect '/'
 end
 
-delete '/snack/:id' do
+delete '/snack/:id' do |id|
   #delete a snack
-  redirect '/'
+  @snack = Tweet.find(id)
+  @snack.destroy
+  redirect '/homepage'
+  p "8"* 100
 end
 
 get '/homepage' do
