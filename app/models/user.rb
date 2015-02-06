@@ -3,6 +3,12 @@ require 'bcrypt'
 class User < ActiveRecord::Base
   has_many :tweets
 
+validates :handle, presence: true
+validates :handle, uniqueness: true
+validates :handle, format: { with: /\A[a-z0-9_-]{3,20}\z/}
+validates :name, presence: true
+
+
 include BCrypt
   def password
     @password || Password.new(password_hash)

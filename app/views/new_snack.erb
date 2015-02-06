@@ -1,12 +1,15 @@
 <p>Add a Snack here!</p>
 
+<%if @snack != nil%>
+  <p>Invalid Snack! 140 Character Limit</p>
+<% end %>
+
 <form action="/snack" method="post">
   What is the snack?
   <br>
   <input type="text" name="data[content]">
   <br>
   <br>
-
   <input type="submit" value="submit">
 
 
