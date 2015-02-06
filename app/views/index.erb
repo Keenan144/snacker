@@ -1,4 +1,11 @@
 <div class="container">
+
+   <a href="/">View all tweets</a>
+
+
+  <a href="/snack/new">Add a Snack</a>
+
+
   <%@snacks.reverse.each do |snack|  %>
   <a href="/snack/<%=snack.id%>"><p><%= snack.content %></p></a>
   <% end %>

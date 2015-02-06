@@ -1,9 +1,10 @@
 <div class="container">
-
+<a href="/register">Sign Up</a>
   <h1>Welcome to Snacker</h1>
-  <a href="/">View all tweets</a>
-
-
-  <a href="/snack/new">Add a Snack</a>
-
+  <%if session_current_user %>
+    <a href="/">View all tweets</a>
+    <a href="/snack/new">Add a Snack</a>
+  <%else%>
+    <p> :( </p>
+    <%end%>
 </div>

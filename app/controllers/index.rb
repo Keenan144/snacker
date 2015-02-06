@@ -21,13 +21,6 @@ post '/login' do
   else
   erb :login
  end
-#validates params from forms
-#if valid
-  #set the current_user to user_id with sessions
-  #redirect to that users profile page
-#else
-  #post the login page again
-  #with error message
 end
 
 #registration page
@@ -45,9 +38,7 @@ post '/register' do
   end
 end
 #create a new user with params from registration form
-#
 #redirect to home page or new profile page
-
 
 #logout route
 
@@ -55,7 +46,7 @@ get '/logout' do
   #sets the current user id to nil
   # redirect to login page.
   session_logout_current_user
-  redirect('/login')
+  redirect('/homepage')
 
 end
 
