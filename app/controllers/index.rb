@@ -101,7 +101,7 @@ delete '/snack/:id' do |id|
 end
 
 get '/homepage' do
-
+  @snacks = Tweet.all
   erb :homepage
 end
 
