@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
@@ -30,7 +31,25 @@
   <% end %>
 </div>
 
-<%= yield %>
-</body>
+<body>
+  <div class="homebutton">
+    <a href="/homepage">Return Home</a>
+  </div>
 
-</html>
+  <div class="login">
+    <% if session_current_user %>
+    <a href="/logout">Logout</a><br><br>
+    <div class="profile">
+    <a href="/profile"> View Profile </a>
+  </div>
+      <% else %>
+      <a href="/login">Login</a>
+      <a href="/register"> Sign Up </a>
+      <% end %>
+    </div>
+
+
+    <%= yield %>
+  </body>
+
+  </html>
