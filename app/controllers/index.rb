@@ -64,7 +64,7 @@ end
 
 post '/snack' do
   #create a new snack
-  @snack = Tweet.create(params[:data])
+  @snack = Tweet.create(content: params[:content], user_id: session[:current_user_id])
   if @snack.valid?
     redirect '/'
   else
