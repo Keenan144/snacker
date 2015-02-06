@@ -7,6 +7,7 @@
 
 
   <%@snacks.reverse.each do |snack|  %>
-  <a href="/snack/<%=snack.id%>"><p><%= snack.content %></p></a>
+  <p><strong> <%= User.find(snack.user_id).handle %> </strong>
+  <a href="/snack/<%=snack.id%>"><%= snack.content %></a></p>
   <% end %>
 </div>
