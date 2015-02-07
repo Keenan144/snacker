@@ -6,21 +6,13 @@
     <link rel="stylesheet" href="/css/application.css">
   </head>
     <body>
-        <div id="header">
+        <div class="btn">
             <ul>
-              <a href="index.html">Home</a>
-              <a href="#">Logout</a>
+              <li><a href="/homepage">Home</a></li>
+              <li><a href="#">Logout</a></li>
             </ul>
-        </div><!DOCTYPE html>
-
-<link rel="stylesheet" "href="">
+        </div>
 </head>
-
-<div class="homebutton">
-  <a href="/homepage">Return Home</a>
-
-
-</div>
 
 <div class="login" float="right">
   <% if session[:current_user_id] == nil %>
@@ -32,12 +24,13 @@
 </div>
 
 <body>
-  <div class="homebutton">
-    <a href="/homepage">Return Home</a>
+
+  <div class="btn">
+    <a href="/homepage">Home</a>
   </div>
 
-  <div class="login">
     <% if session_current_user %>
+  <div class="btn">
     <a href="/logout">Logout</a><br><br>
     <div class="profile">
     <a href="/profile"> View Profile </a>

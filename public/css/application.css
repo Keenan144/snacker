@@ -1,4 +1,6 @@
 body {
+  background-color:#27586B;
+  color: black;
 }
 
 html {
@@ -9,3 +11,44 @@ html {
   float: right
 }
 
+.container {
+  background-color: #FFB800;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.login {
+
+}
+
+a {
+  color: #FFB800;
+}
+
+.btn {
+  background: #FFB800;
+  background-image: -webkit-linear-gradient(top, #FFB800, #AA8B39);
+  background-image: -moz-linear-gradient(top, #FFB800, #AA8B39);
+  background-image: -ms-linear-gradient(top, #FFB800, #AA8B39);
+  background-image: -o-linear-gradient(top, #FFB800, #AA8B39);
+  background-image: linear-gradient(to bottom, #FFB800, #AA8B39);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  width: 5%;
+}
+
+.btn:hover {
+  background: #AA8B39;
+  background-image: -webkit-linear-gradient(top, #AA8B39, #FFB800);
+  background-image: -moz-linear-gradient(top, #AA8B39, #FFB800);
+  background-image: -ms-linear-gradient(top, #AA8B39, #FFB800);
+  background-image: -o-linear-gradient(top, #AA8B39, #FFB800);
+  background-image: linear-gradient(to bottom, #AA8B39, #FFB800);
+  text-decoration: none;
+}
