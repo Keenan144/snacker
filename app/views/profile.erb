@@ -1,5 +1,14 @@
 <h2 align ="center">Welcome <%= User.find(session[:current_user_id]).name %></h2>
 
+<!-- <a href="/followers"> Who You're Following </a> -->
+<p> Who You're Following </p>
+<%= following = User.find(session[:current_user_id]).users_following%>
+<%= following.handle%>
+<% following.each do |person| %>
+<a href="/profile/<%person.handle%>" <%=person.handle %> </a>
+<%end%>
+
+
 <div class="container" align="center">
   <%id = session[:current_user_id] %>
   <h4> Here are your snacks: </h4>

@@ -25,6 +25,7 @@
 <div align="center">
   <a href="/snack/<%=@snack.id%>/edit">Edit Post</a>
   <br>
+<a href="/follow/<%=User.find(@snack.user_id).handle%>">Follow this User</a>
   <br>
 <form action="/snack/<%=@snack.id%>" method="post">
   <input name="_method" type="submit" value="delete">

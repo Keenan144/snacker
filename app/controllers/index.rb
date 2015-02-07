@@ -62,7 +62,7 @@ get '/snack/new' do
     redirect('/')
   else
 #return html form to create a new tweet
-#can't create a new snack if you're not logged in. 
+#can't create a new snack if you're not logged in.
     erb :new_snack
   end
 end
@@ -88,6 +88,14 @@ get '/snack/:id' do |id|
     erb :view_single_snack
   end
 end
+
+get "/follow/:handle" do
+  @person = User.find_by(handle: params[:handle])
+   Follow.create(follower_id: session[:current_user_id], followed_id: @person.id)
+  # Follow.create(follower_id: session[:current_user_id], followed_id: User.find_by(handle: params[:handle]).id)
+  erb :profile
+end
+
 
 get '/snack/:id/edit' do |id|
   if session_current_user == nil
