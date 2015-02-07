@@ -91,9 +91,13 @@ end
 
 get "/follow/:handle" do
   @person = User.find_by(handle: params[:handle])
-   Follow.create(follower_id: session[:current_user_id], followed_id: @person.id)
-  # Follow.create(follower_id: session[:current_user_id], followed_id: User.find_by(handle: params[:handle]).id)
+#if follow has already been created
+  if Follow.where(follower_id: session[:current_user_id], followed_id: @person.id).count > 0
   erb :profile
+  else
+   Follow.create(follower_id: session[:current_user_id], followed_id: @person.id)
+  erb :profile
+  end
 end
 
 
