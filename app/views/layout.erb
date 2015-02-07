@@ -1,9 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <!-- <link rel="stylesheet" "href=""> -->
-</head>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/application.css">
+  </head>
+
 <body>
+
+<div class="login" float="right">
+  <% if session[:current_user_id] == nil %>
+  <a href="/login">Login</a>
+  <% else %>
+  <a href="/profile">
+    <p> <%= User.find(session[:current_user_id]).name %> </p></a>
+  <% end %>
+</div>
+
   <div class="homebutton">
     <a href="/homepage">Home</a>
   </div>

@@ -1,7 +1,8 @@
-<p>Welcome <%= User.find(session[:current_user_id]).name %></p>
+<h2 align ="center">Welcome <%= User.find(session[:current_user_id]).name %></h2>
 
-<div class="container">
+<div class="container" align="center">
   <%id = session[:current_user_id] %>
+  <h4> Here are your snacks: </h4>
   <%array = Tweet.where(user_id: id) %>
   <%array.each do |snack|%>
   <a href="/snack/<%=snack.id%>"><p><%= snack.content %></p></a>

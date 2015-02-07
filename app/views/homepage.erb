@@ -1,10 +1,27 @@
 <div class="container">
-<a href="/register">Sign Up</a>
-  <h1>Welcome to Snacker</h1>
+  <h1 align="center">Welcome to Snacker</h1>
   <%if session_current_user %>
+  <div align="center">
     <a href="/">View all tweets</a>
     <a href="/snack/new">Add a Snack</a>
+  </div>
   <%else%>
-    <p> :( </p>
-	<%end%>
+    <p align="center"> you are not <a href="/login">logged in </a></p>
+
+    <%end%>
+</div>
+
+<br>
+<br>
+<h4 align="center"> Latest Snacks </h4>
+
+<div align="center">
+  <% @counter = 0 %>
+  <%@snacks.reverse.each do |snack|  %>
+  <% @counter += 1 %>
+  <% if @counter < 10 %>
+  <p><strong> <a href="/profile"><%= User.find(snack.user_id).handle %></a> </strong>
+  <a href="/snack/<%=Tweet.find(snack).id%>"><%= snack.content %> </a> </p>
+  <% end %>
+  <% end %>
 </div>

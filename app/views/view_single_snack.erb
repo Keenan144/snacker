@@ -1,12 +1,31 @@
 <div class="container">
   <% @snack  %>
   <h3> SNACK: </h3>
-  <p><%= @snack.content %></p>
-  <p> Tweet Id:</p>
-  <p><%= @snack.id %></p>
+  <br>
+  <br>
+  <br>
+  <h4 align="center"><em> " <%= @snack.content %> "</em></h4>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <hr>
 
+  <h5> Snacked by:</h5>
+  <%= User.find(@snack.user_id).handle %>
+  <h5> Created at: </h5>
+  <%= Tweet.find(@snack.user_id).created_at %>
+  <h5> Last Updated at: </h5>
+  <p><%= Tweet.find(@snack.user_id).updated_at %></p>
+  <br>
+</div>
+
+<div align="center">
   <a href="/snack/<%=@snack.id%>/edit">Edit Post</a>
-
+  <br>
+  <br>
 <form action="/snack/<%=@snack.id%>" method="post">
   <input name="_method" type="submit" value="delete">
 </form>
