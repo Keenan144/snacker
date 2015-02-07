@@ -1,7 +1,7 @@
 
 get '/profile' do
-  if session[:current_user_id] == nil
-    "you're not logged in"
+  if session_current_user == nil
+    redirect('/')
   else
     erb :profile
   end
@@ -58,8 +58,13 @@ get '/' do
 end
 
 get '/snack/new' do
+  if session_current_user == nil
+    redirect('/')
+  else
 #return html form to create a new tweet
-  erb :new_snack
+#can't create a new snack if you're not logged in. 
+    erb :new_snack
+  end
 end
 
 post '/snack' do
@@ -68,21 +73,30 @@ post '/snack' do
   if @snack.valid?
     redirect '/'
   else
-    erb :new_snack
+    @valid = false
+    erb :edit
   end
 end
 
 get '/snack/:id' do |id|
+  if session_current_user == nil
+    redirect('/')
+  else
   #display a specific snack
-  @snack = Tweet.find(id)
+    @snack = Tweet.find(id)
 
-  erb :view_single_snack
+    erb :view_single_snack
+  end
 end
 
 get '/snack/:id/edit' do |id|
-  #return html form for editing snack
-  @snack = Tweet.find(id)
-  erb :edit
+  if session_current_user == nil
+    redirect('/')
+  else
+    #return html form for editing snack
+    @snack = Tweet.find(id)
+    erb :edit
+  end
 end
 
 put '/snack/:id' do
@@ -93,11 +107,15 @@ put '/snack/:id' do
 end
 
 delete '/snack/:id' do |id|
-  #delete a snack
-  @snack = Tweet.find(id)
-  @snack.destroy
-  redirect '/homepage'
-  p "8"* 100
+  if session_current_user == nil
+    redirect('/')
+  else
+    #delete a snack
+    @snack = Tweet.find(id)
+    @snack.destroy
+    redirect '/homepage'
+    p "8"* 100
+  end
 end
 
 get '/homepage' do

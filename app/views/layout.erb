@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="/css/application.css">
   </head>
 
+<body>
+
 <div class="login" float="right">
   <% if session[:current_user_id] == nil %>
   <a href="/login">Login</a>
@@ -15,23 +17,20 @@
   <% end %>
 </div>
 
-<body>
   <div class="homebutton">
-    <a href="/homepage">Return Home</a>
+    <a href="/homepage">Home</a>
   </div>
+  <h1>Snacker</h1>
 
-  <div class="login">
-    <% if session_current_user %>
-    <a href="/logout">Logout</a><br><br>
-    <div class="profile">
-    <a href="/profile"> View Profile </a>
-  </div>
-      <% else %>
-      <a href="/login">Login</a>
-      <a href="/register"> Sign Up </a>
+    <div class="login">
+      <% if session_current_user == nil %>
+        <a href="/register">Sign Up</a>
+        <a href="/login">Login</a>
+        <% else %>
+        <a href="/profile"> View Profile </a>
+        <a href="/logout">Logout</a><br><br>
       <% end %>
     </div>
-
 
     <%= yield %>
   </body>
