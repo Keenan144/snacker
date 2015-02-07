@@ -3,7 +3,6 @@
 <!-- <a href="/followers"> Who You're Following </a> -->
 <p> Who You're Following </p>
 <%= following = User.find(session[:current_user_id]).users_following%>
-<%= following.handle%>
 <% following.each do |person| %>
 <a href="/profile/<%person.handle%>" <%=person.handle %> </a>
 <%end%>
